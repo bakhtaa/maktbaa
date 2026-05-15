@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+
+# environment secrets
+.env
+.env.*
+!.env.example
+
+# Angular cache
+.angular/
+.angular/cache/
+
+tmp/
+coverage/
+*.tsbuildinfo
+
+#Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# build output
+dist/
+out-tsc/
+
+
+
+# editor
+
+.vscode/
+.idea/
+*.suo
+.ntvs
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+#misc
+.history/
