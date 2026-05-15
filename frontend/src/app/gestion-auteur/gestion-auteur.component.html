@@ -1,0 +1,60 @@
+<h2>Gestion des auteurs</h2>
+
+<div class="filters-card">
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <label>Search by name</label>
+            <input type="text" class="form-control" [(ngModel)]="searchName">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Sort</label>
+            <select class="form-control" [(ngModel)]="sortOption">
+                <option value="">No sorting</option>
+                <option value="nom">Name</option>
+            </select>
+        </div>
+
+    </div>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let auteur of paginatedAuteurs">
+            <td>{{ auteur.id }}</td>
+            <td>{{ auteur.nom }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteAuteur(auteur)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<div class="d-flex justify-content-center mt-3">
+
+    <button class="btn btn-secondary mx-2" (click)="prevPage()" [disabled]="currentPage === 1">
+        Prev
+    </button>
+
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+
+    <button class="btn btn-secondary mx-2" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        Next
+    </button>
+
+</div>

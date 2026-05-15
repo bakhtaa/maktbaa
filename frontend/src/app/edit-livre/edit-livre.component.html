@@ -1,0 +1,20 @@
+<h2>Edit Livre</h2>
+
+<form [formGroup]="formLivre" (ngSubmit)="submit()">
+
+  <input formControlName="titre" placeholder="Titre">
+  
+  <input formControlName="description" placeholder="Description">
+
+  <input formControlName="prix" type="number" placeholder="Prix">
+
+  <select formControlName="auteur">
+    <option value="">Choisir auteur</option>
+    <option *ngFor="let a of auteurs" [value]="a.id">
+      {{ a.nom }}
+    </option>
+  </select>
+
+  <button type="submit">Update</button>
+
+</form>

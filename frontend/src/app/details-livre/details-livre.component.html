@@ -1,0 +1,15 @@
+<h2>Book Details</h2>
+
+<div class="page-card" *ngIf="livre">
+
+    <p><strong>ID:</strong> {{ livre.id }}</p>
+    <p><strong>Title:</strong> {{ livre.titre }}</p>
+    <p><strong>Description:</strong> {{ livre.description }}</p>
+    <p><strong>Category / Availability:</strong> {{ livre.disponibilite }}</p>
+
+    <p>
+        <strong>Author:</strong>
+        {{ livre.auteur?.nom }}
+    </p>
+
+</div>

@@ -1,0 +1,29 @@
+<h2>Add Author</h2>
+
+<form [formGroup]="formAuteur" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label>Author Name</label>
+        <input formControlName="nom" class="form-control" type="text">
+        <div class="error-message">{{ getErrorMessage('nom') }}</div>
+    </div>
+
+    <div class="form-group">
+        <label>Nationality</label>
+        <input formControlName="nationalite" class="form-control" type="text">
+        <div class="error-message">{{ getErrorMessage('nationalite') }}</div>
+    </div>
+
+    <div class="form-group">
+        <label>Biography</label>
+        <input formControlName="biographie" class="form-control" type="text">
+        <div class="error-message">{{ getErrorMessage('biographie') }}</div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success mt-2" [disabled]="loading">
+            {{ loading ? 'Adding...' : 'Submit' }}
+        </button>
+    </div>
+
+</form>
