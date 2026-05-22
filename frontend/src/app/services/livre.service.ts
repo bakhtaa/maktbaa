@@ -18,7 +18,7 @@ export class LivreService {
 
   // GET by id
   getLivreById(id: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/api/livres${id}`);
+    return this.http.get(`${environment.apiUrl}/api/livres/${id}`);
   }
 
   // CREATE

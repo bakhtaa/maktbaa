@@ -8,8 +8,6 @@ import { environment } from '../../environments/environment'
 })
 export class AuteurService {
 
-  private apiUrl = 'http://localhost:3000';
-
   constructor(private http: HttpClient) { }
 
   // GET all auteurs
@@ -24,7 +22,7 @@ export class AuteurService {
 
   // CREATE
   createAuteur(data: any): Observable<any> {
-    return this.http.post(environment.apiUrl, data);
+    return this.http.post(`${environment.apiUrl}/api/auteurs`, data);
   }
 
   // UPDATE
